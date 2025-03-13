@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер задач</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Менеджер задач</h1>
+
+    <!-- Форма для добавления задачи -->
+    <form id="add-task-form">
+        <input type="text" id="title" placeholder="Название задачи" required>
+        <input type="text" id="description" placeholder="Описание">
+        <select id="status">
+            <option value="new">Новая</option>
+            <option value="in progress">В процессе</option>
+            <option value="done">Готово</option>
+        </select>
+        <input type="date" id="due_date">
+        <button type="submit">Добавить задачу</button>
+    </form>
+
+    <!-- Форма для удаления задачи -->
+    <form id="delete-task-form">
+        <input type="number" id="task-id" placeholder="ID задачи" required>
+        <button type="submit">Удалить задачу</button>
+    </form>
+
+    <!-- Таблица с задачами -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Описание</th>
+                <th>Статус</th>
+                <th>Срок</th>
+                <th>Действия</th> <!-- Новый столбец для кнопок -->
+            </tr>
+        </thead>
+        <tbody id="task-list"></tbody>
+    </table>
+
+    <!-- Форма редактирования задачи -->
+    <form id="edit-task-form" style="display: none;">
+        <h3>Редактировать задачу</h3>
+        <input type="hidden" id="edit-task-id">
+        <input type="text" id="edit-title" placeholder="Название задачи" required>
+        <input type="text" id="edit-description" placeholder="Описание">
+        <select id="edit-status">
+            <option value="new">Новая</option>
+            <option value="in progress">В процессе</option>
+            <option value="done">Готово</option>
+        </select>
+        <input type="date" id="edit-due_date">
+        <button type="submit">Сохранить изменения</button>
+        <button type="button" id="cancel-edit">Отмена</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
